@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whisp</title>
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <div class="left">
+            <details open id="tabs-defchannels">
+                <summary>Topics</summary>
+            </details>
+            <details>
+                <summary>Servers</summary>
+                <p class="channel" onclick="window.createServer()">
+                    <i class="fa-solid fa-plus"></i>
+                    Create server
+                </p>
+                <div class="servers-list"></div>
+            </details>
+        </div>
+        <div class="right">
+            <div class="tab active center" id="tab-nothing">
+                <h1>Whisp</h1>
+                <br>
+                <p>Welcome in our communicator, where you can join default channels available for everyone or create your own server with your own channels. If you would like something simpler, our groups are probably the best option for you.</p>
+                <br>
+                <p>Select something on the left panel to get started.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start your journey - Whisp</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Whisp</h1>
+        <br>
+        <p>Welcome to <strong>Whisp</strong> — a modern, lightweight communicator designed for seamless conversations. Create your account in seconds and join channels to chat with everyone on the platform.</p>
+        <br>
+        <p>Need more space for your community? Set up a <strong>server</strong> for larger groups, or create a <strong>private group</strong> for more intimate conversations. Whatever your needs, Whisp adapts to you.</p>
+        <br>
+        <h2>Click <a href="javascript:login()">here</a> to log in or register.</h2>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: black;
+            font-size: 22px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100dvw;
+            height: 100dvh;
+            background-color: black;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        h2, h2 * {
+            font-size: 32px;
+        }
+    </style>
+    <script>
+        function login() {
+            if (localStorage.getItem('user') !== null && localStorage.getItem('pass') !== null) {
+                window.location.href = '/';
+                return;
+            }
+
+            try {
+                localStorage.setItem('user', prompt('Username (if not exists it will be created):'));
+                localStorage.setItem('pass', prompt('Password:'))
+            } catch {};
+            login();
+        }
+    </script>
+</body>
+</html>

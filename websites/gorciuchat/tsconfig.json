@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "dist",
+        "skipLibCheck": true,
+        "lib": [
+            "ES2024"
+        ],
+        "target": "es2024"
+    },
+    "include": [
+        "backend/**/*.ts"
+    ]
+}

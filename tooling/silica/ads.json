@@ -1,0 +1,13 @@
+{
+    "warning": "========= DO NOT MODIFY THIS FILE ============ | Submit an issue with your ad, using specific issue template AND wait for us to insert your ad here",
+    "ads": [
+        {
+            "keywords": [
+                "welcome"
+            ],
+            "title": "Welcome here!",
+            "description": "I want to introduce an example advertisement.",
+            "url": "https://google.com"
+        }
+    ]
+}

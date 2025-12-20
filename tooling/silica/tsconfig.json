@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "ES2024",
+            "DOM"
+        ],
+        "target": "es2016",
+        "skipLibCheck": true,
+        "outDir": "out",
+        "module": "esnext"
+    },
+    "include": [
+        "src/**/*.ts"
+    ]
+}
