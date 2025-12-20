@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: juamp
+    runtime: node
+    repo: https://github.com/gorciu-official/JUAMPPrivateData
+    branch: main
+    buildCommand: npm install
+    startCommand: npm test
+    envVars:
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: app
+      mountPath: /mnt/app
+      sizeGB: 1

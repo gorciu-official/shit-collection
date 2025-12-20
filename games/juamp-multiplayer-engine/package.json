@@ -1,0 +1,20 @@
+{
+  "name": "juamp-server",
+  "version": "0.0.3",
+  "description": "The JUAMP server",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "tsc && node ."
+  },
+  "keywords": [
+    "juamp"
+  ],
+  "author": "Gorciu",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/ws": "^8.18.0",
+    "typescript": "^5.8.2",
+    "ws": "^8.18.1"
+  }
+}
