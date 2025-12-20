@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "ES2016",
+        "lib": [
+            "ES2024"
+        ],
+        "module": "CommonJS",
+        "skipLibCheck": true
+    },
+    "include": [
+        "loader/**/*.ts"
+    ]
+}

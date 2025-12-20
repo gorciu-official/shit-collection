@@ -1,0 +1,10 @@
+# Files taht exist only internally and should not be
+# included in commit history.
+tsconfig.json
+
+# Output files
+src/js
+dist
+
+# Libraries
+node_modules

@@ -1,0 +1,21 @@
+{
+  "name": "byteforge",
+  "version": "1.0.0",
+  "description": "Your IDE",
+  "main": "dist/main.js",
+  "scripts": {
+    "patch": "echo \"Sorry, patching is unimplemented.\" && exit 1",
+    "compilation": "tsc",
+    "start": "electron ."
+  },
+  "keywords": [
+    "ide"
+  ],
+  "author": "Gorciu",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "electron": "^36.2.1",
+    "typescript": "^5.8.3"
+  }
+}
