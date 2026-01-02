@@ -1,2 +1,3 @@
-wget --no-verbose https://github.com/gorciu-official/ghla/releases/download/beta3/ghlac.elf -O ~/.cache/ghlac.elf
-sudo mv ~/.cache/ghlac.elf /usr/bin
+wget --no-verbose https://github.com/gorciu-official/ghla/releases/download/beta3/ghlac.elf -O ~/.cache/ghlac
+sudo mv ~/.cache/ghlac /usr/local/bin/ghlac
+sudo chmod 755 /usr/local/bin/ghlac
