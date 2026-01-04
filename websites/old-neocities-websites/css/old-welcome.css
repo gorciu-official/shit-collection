@@ -1,0 +1,74 @@
+@import url(global.css);
+
+* {
+    color: white;
+}
+
+body {
+    background-color: #0e0d0d;
+    padding: 5px;
+}
+
+.said {
+    position: relative;
+    background: #3f3f3f;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 1rem;
+}
+
+.said::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #3f3f3f;
+}
+
+.said, .said * {
+    color: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background-color: white;
+    padding: 15px;
+}
+
+header img {
+    max-height: 64px;
+}
+
+header, header * {
+    font-size: 60px;
+    font-family: monospace;
+    color: black;
+}
+
+.column {
+    padding: 15px;
+    border: 2px solid #ff8800;
+    margin: 10px 0;
+    background-color: #2e2417;
+}
+
+.row50 div.columnbefore {
+    min-width: calc(100% / 2 - 10px);
+}
+
+@media (max-width: 800px) {
+    header, header * {
+        font-size: 40px;
+    }
+
+    .row:has(.column) {
+        flex-direction: column;
+    }
+}

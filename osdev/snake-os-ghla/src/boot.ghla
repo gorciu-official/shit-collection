@@ -1,0 +1,27 @@
+; boot.ghla configures everything (including Multiboot Header required by GRUB
+; and other bootloaders to see snake-os) and loads the kernel main function
+; from /src/main.c
+
+program snakeos_boot
+
+bits 32
+
+; The main function where the snake game starts. It is also declared in
+; linker script (linker.ld), defined in /src/main.c
+; file.
+import smain
+
+; Multiboot Header section. Required by some bootloaders (including GRUB, that
+; snake-os uses in the current state) to see binary as operating system.
+section .multiboot
+    align 4
+    dd 0x1BADB002
+    dd 0x00
+    dd -(0x1BADB002 + 0x00)
+
+section .text
+
+export start:
+    cli ; Clear interrupts
+    call smain ; Call the snake main function (from /src/main.c)
+    hlt ; Halt the proccessor

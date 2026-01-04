@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        p:not(.desc) {
+            color: orangered;
+            text-shadow: 2px 2px 2px black;
+            font-size: 20px;
+        }
+
+        body {
+            background-image: url(https://textures.neocities.org/textures/abstract-green-and-yellow/124.GIF);
+            background-color: #00000063;
+            background-blend-mode: darken;
+            padding: 10px;
+        }
+
+        .img .thumb {
+            aspect-ratio: 1/1;
+            width: 300px;
+            height: 300px;
+        }
+
+        .img {
+            overflow: hidden;
+            position: relative;
+            border: 2px solid black;
+            max-height: 300px;
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            margin-bottom: 0;
+            max-width: 300px;
+            padding: 10px;
+            transform: translateY(50px);
+            transition: 0.25s;
+        }
+
+        .img:hover .desc {
+            transform: translateY(-10px);
+            transition: 0.25s;
+        }
+
+        p {
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <p>Greetings Humans!</p>
+    <p>Here I show you many games created by my little person.</p>
+    <div class="center">
+        <div class="row">
+            <section>
+                <div class="img">
+                    <img src="/img/juamp-game.png" alt="juamp thumbnail" class="thumb">
+                    <p class="desc">JUAMP (<a href="https://github.com/gorciu-official/JUAMP/releases/latest" target="_blank">download here</a>)</p>
+                </div>
+                <div class="img">
+                    <img src="/img/suntrack-game.png" alt="suntrack thumbnail" class="thumb">
+                    <p class="desc"><a href="https://suntrack-mirror.netlify.app/" target="_blank">Suntrack</a> (<a href="https://suntrack-mirror.netlify.app/" target="_blank">play here</a>)</p>
+                </div>
+                <div class="img">
+                    <img src="/img/skim-game.png" alt="skim thumbnail" class="thumb">
+                    <p class="desc"><a href="https://theskim.netlify.app/" target="_blank">Skim</a> (<a href="https://theskim.netlify.app/">play here</a>)</p>
+                </div>
+            </section>
+            <section>
+                <div class="img">
+                    <img src="/img/virtualminer-game.png" alt="vm thumbnail" class="thumb">
+                    <p class="desc"><a href="https://github.com/gorciu-official/VirtualMiner" target="_blank">Virtual Miner</a> (<a href="https://virtualminer.netlify.app/">play here</a>)</p>
+                </div>
+                <div class="img">
+                    <img src="/img/propolia-game.png" alt="propolia thumbnail" class="thumb">
+                    <p class="desc"><a href="https://propolia.netlify.app/" target="_blank">Propolia</a> (<a href="https://propolia.netlify.app/">play here</a>)</p>
+                </div>
+                <div class="img">
+                    <img src="/img/socially-game.png" alt="socially thumbnail" class="thumb">
+                    <p class="desc"><a href="https://socially-game.netlify.app/" target="_blank">Socially</a> (<a href="https://socially-game.netlify.app/">play here</a>)</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <p>Pssst... You can find <a href="games-old.html" style="color: white;">more text-based version here</a>!</p>
+</body>
+</html>

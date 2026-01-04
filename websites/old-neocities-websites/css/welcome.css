@@ -1,0 +1,131 @@
+@import url(global.css);
+
+body {
+    background-image: url(/img/space.gif);
+    background-size: 100px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+}
+
+* {
+    color: lime;
+}
+
+p {
+    background-color: black;
+    max-width: 60dvw;
+    text-align: center;
+}
+
+.status {
+    max-width: 800px;
+    border: 2px solid yellow;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: blue;
+}
+
+.status iframe {
+    border: none;
+    width: 100vw;
+    max-width: calc(800px - 22px);
+}
+
+@keyframes meAnim {
+    0% {
+        rotate: 0deg;
+        background-color: #ffffffa8;
+    }
+
+    25% {
+        rotate: 10deg;
+        background-color: white;
+    }
+
+    50% {
+        rotate: -10deg;
+        background-color: white;
+    }
+
+    100% {
+        rotate: 0deg;
+        background-color: #ffffffa8;
+    }
+}
+
+.me {
+    background-color: #ffffffa8;
+    background-image: url(/img/gorciu.png);
+    background-position: left;
+    background-size: cover;
+    border-radius: 10px;
+    width: 140px;
+    height: 271px;
+    animation: meAnim infinite linear 1s;
+}
+
+.me img {
+    display: none;
+}
+
+section.mesect {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.mesect a.gorciulink {
+    position: absolute;
+    font-size: 0px; /** description for mobile mode */
+}
+
+section.mesect a.gorciulink img {
+    max-width: 64px;
+}
+
+section.mesect a.gorciulink.pos1 {
+    top: 0;
+    left: 0;
+}
+
+section.mesect a.gorciulink.pos2 {
+    bottom: 0;
+    right: 0;
+}
+
+section.mesect a.gorciulink.pos3 {
+    bottom: 0;
+    left: 0;
+}
+
+.column {
+    padding: 15px;
+    border: 2px solid #ff8800;
+    margin: 10px 0;
+    background-color: #14100a;
+}
+
+.row50 div.columnbefore {
+    min-width: calc(100% / 2 - 10px);
+}
+
+@media (max-width: 800px) {
+    header, header * {
+        font-size: 40px;
+    }
+
+    .row:has(.column) {
+        flex-direction: column;
+    }
+}
+
+.column * {
+    background-color: transparent;
+    color: white;
+    text-align: left;
+}

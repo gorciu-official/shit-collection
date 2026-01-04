@@ -1,0 +1,31 @@
+@import url(global.css);
+
+* {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    padding: 35px;
+    background-image: linear-gradient(lightblue, lightgray, white, lightgray, lightblue);
+    background-attachment: fixed;
+}
+
+.quote {
+    border-left: blue solid 5px;
+    padding-left: 5px;
+}
+
+pre, pre * {
+    font-family: monospace;
+}
+
+pre {
+    background-color: lightskyblue;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+}

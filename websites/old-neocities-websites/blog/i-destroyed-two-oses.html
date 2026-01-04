@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gorciu's blog</title>
+    <link rel="stylesheet" href="/css/blogentry.css">
+    <script src="/js/common.js"></script>
+</head>
+<body>
+    <h1>I destroyed two different operating systems at the same holiday</h1>
+    <p>I own laptop, as well as desktop PC. I managed to destroy two of them and get them back working, without reinstall. In laptop's case I didn't even need external USB drive.</p>
+    <p>But... how I managed to destroy two different operating systems? Is it really that easy to blow your computers up? The problem is that in two cases I don't know what was the real fault.</p>
+    <h2>ntoskrnl.exe and Windows Resource Protection</h2>
+    <p>Casual session at the terminal. Still making fun of Windows permissions. Even as a <i>nt-authority/SYSTEM</i>, you can't delete the Windows kernel. It is protected by WRP, which ensured the only user that can delete this file is TrustedInstaller. So I typed this into the terminal, knowing I'd get a permission error [retyped manually]:</p>
+<pre><code>C:\Users\Gorciu>cd Pulpit\pstools
+C:\Users\Gorciu\Pulpit\PSTools>psexec64 -s cmd.exe
+
+Sysinternals something something
+Mark XXX
+
+Could not install psexec service.
+C:\Users\Gorciu\Pulpit\PSTools>sudo psexec64 -s cmd.exe
+
+Sysinternals something something
+Mark XXX
+
+Microsoft Windows 10.0.26.19433
+(c) 2025 Microsoft Corporation
+
+C:\Windows\System32>whoami
+nt-authority/SYSTEM
+C:\Windows\System32>del ntoskrnl.exe
+C:\Windows\System32>
+</code></pre>
+    <p>There was no permission error. I did not get Permission Denied. I deleted the Windows kernel.</p>
+    <h2>What did I actually deleted?</h2>
+    <p>System booting consists of three stages:</p>
+    <ul>
+        <li><b>Bootloader</b> loads the operating system from the disk.</li>
+        <li><b>Kernel</b> loads all of the drivers and prepares many things before logging you in.</li>
+        <li><b>User-space</b> for example shows you login screen.</li>
+    </ul>
+    <p>I deleted the second stage of booting, making my device unusable after the restart. But I did not restarted...</p>
+    <h2>If you have power all the time and you don't have to reboot, you can live without a kernel</h2>
+    <marquee behavior="alternate" style="margin-bottom:10px;color:red;" truespeed scrolldelay="15">no, you can't</marquee>
+    <p>I can. The kernel is already loaded into my RAM. It is runned from random access memory, not from the hard disk. It means that for as long as I could not reboot my OS, everything will be fine. But I was on a holiday. I could not have my laptop powered all the time. I needed to act fast.</p>
+    <h2>I changed the kernel, unknowingly failed and rebooted...</h2>
+    <p>Windows knows that kernel and drivers are important. But it isn't that simple like just typing:</p>
+    <pre><code>pacman -S linux</code></pre>
+    <p>You see, in Windows the copy of your OS kernel is stored in <b>Windows Side by Side directory</b> (usually C:\Windows\SxS). You'd naturally assume it contains a copy of C:\Windows or C:\Windows\System32 directories. <i>You're wrong</i>.</p>
+    <p>It will contain a bunch of catalouges, like <i>amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.1635_none_1f7e1b8d6aafedc7</i>. And even if you'll find the Windows kernel, you'll probably find at least four of them. Two of them being from two different OS versions and other two of them being in r/ folder. For example, you might find these directories for common-controls:</p>
+    <ul>
+        <li>amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.1635_none_1f7e1b8d6aafedc7</li>
+        <li>amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.1634_none_1f7e1b8d6aafedc7</li>
+        <li>amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.1635_none_1f7e1b8d6aafedc7\r</li>
+        <li>amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.1634_none_1f7e1b8d6aafedc7\r</li>
+    </ul>
+    <p>ChatGPT says r means redirected or resource and that I should use the newest version, not from r/. So i did this. I rebooted.</p>
+    <h2>Preparing automatic repair... Diagnosing your PC... Your PC cannot be repaired... LIES!</h2>
+    <p>It can be. Unknowingly I have created a restore point which saved my life. When I was messing up with the kernel, <b>there was a pending Windows Update</b>. It creates a restore point, even if you have them disabled. I restored my system from this restore point. After half an hour it started working again.</p>
+    <h2>The other case</h2>
+    <p>I started the Arch Linux update. There was an error that went unnoticed to the next update, when I finally realized what caused the error. This time, I screenshotted it.</p>
+    <div class="center" style="margin-bottom:10px;">
+        <img src="/img/segfault.webp" alt="segfault">
+    </div>
+    <p>I probably had segfault while building the initramfs image.</p>
+    <p>I clicked "Sleep", but my computer wasn't in bed. It was powered on, but it didn't trasmit any signal to any of my output devices. I rebooted using a physical button and GRUB sayed to me that the kernel is not </p>
+    <p>The thing I did was... yeah, only one command from live boot:</p>
+    <pre><code>pacman -S linux</code></pre>
+    <h2>I do think operating systems' kernels are unbreakable</h2>
+    <p>I was able to restore every kernel that I fucked up.</p>
+    <hr>
+    <a href="/blog.html">Back to blog</a>
+</body>
+</html>

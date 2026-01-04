@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mobile version of gorciu's corner</title>
+    <script>
+        // @ts-check
+
+        const renderSite = async (site) => {
+            const res = await fetch(`/${site}.html`);
+            const documentText = await res.text();
+            const parser = new DOMParser().parseFromString(documentText, "text/html");
+            const documentBody = parser.body;
+            const siteWrapper = document.querySelector('.site');
+
+            if (!siteWrapper) return;
+            siteWrapper.innerHTML = documentBody.innerHTML;
+
+            siteWrapper.querySelectorAll("a").forEach(a => {
+                a.addEventListener("click", (e) => {
+                    const url = new URL(a.href.replace('.html', ''));
+                    const siteParam = url.searchParams.get("site") ?? (url.pathname.replace("/", "") || "home");
+
+                    if (url.origin === location.origin && !a.target) {
+                        e.preventDefault();
+                        history.pushState({ site: siteParam }, "", `?site=${siteParam}`);
+                        window.scrollTo(0, 0);
+                        renderSite(siteParam);
+                    }
+                });
+            });
+        };
+
+        const installMobile = async () => {
+            const navigation = new DOMParser().parseFromString(await (await fetch('/index.html')).text(), "text/html").querySelector('nav');
+            const navbox = document.querySelector('.navigation');
+            const sc = '>' + '</sc' + 'ript>';
+            if (!navbox || !navigation) return;
+            let fixedNav = navigation.innerHTML;
+            while (fixedNav.includes(' target="main-content"')) fixedNav = fixedNav.replace(' target="main-content"', '');
+            navbox.innerHTML = fixedNav.replace('<div class="additional-info">\n            <p>You\'re the visitor number:</p>\n            <script type="text/javascript" src="https://counter.websiteout.com/js/2/0/20/0"' + sc +  '\n            <p>(<a href="https://neocities.org/site/gorciu" target="_blank">follow me</a>)</p>\n        </div>', '');
+
+            navbox.querySelectorAll("a").forEach(a => {
+                a.addEventListener("click", (e) => {
+                    const url = new URL(a.href.replace('.html', ''));
+                    const siteParam = url.searchParams.get("site") ?? (url.pathname.replace("/", "") || "home");
+
+                    if (url.origin === location.origin && !a.target) {
+                        e.preventDefault();
+                        history.pushState({ site: siteParam }, "", `?site=${siteParam}`);
+                        window.scrollTo(0, 0);
+                        renderSite(siteParam);
+                    }
+                });
+            });
+
+            const site = (new URLSearchParams(window.location.search)).get('site') ?? 'home';
+            renderSite(site);
+        };
+
+        window.addEventListener("popstate", (e) => {
+            const site = e.state?.site ?? (new URLSearchParams(window.location.search)).get('site') ?? 'home';
+            renderSite(site);
+        });
+
+        if (document.readyState == "loading") {
+            document.addEventListener('DOMContentLoaded', installMobile);
+        } else {
+            installMobile();
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: white;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+
+        body {
+            background-color: #000000;
+            display: flex;
+            padding: 10px;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        .site, .additional-mobile-version-box {
+            background-color: #201f1f;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
+        .cenrow, img {
+            max-width: 100% !important;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        small {
+            font-size: 18px;
+        }
+
+        h1, p:not(:last-child), li, h2, small, hr {
+            margin-bottom: 10px;
+        }
+
+        .navigation {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+            overflow-x: hidden;
+            margin-top: 30px;
+        }
+
+        .navigation img {
+            height: 64px;
+            display: block;
+        }
+
+        .navigation a {
+            color: #ece90b;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="additional-mobile-version-box">
+        <p>Hello, I'm Gorciu and thanks for stepping inside my home.</p>
+        <p>You're viewing my site in the <b>mobile mode</b>. <a href="/?bypass-mobile-redirect=true&site=home">You can go here for a full, desktop experience</a>.</p>
+        <p><b>Feeling lost?</b> <a href="#nav">Jump to navigation</a>.</p>
+    </div>
+    <div class="site"></div>
+    <div class="additional-mobile-version-box" id="nav">
+        <p>You're visitor number:</p>
+        <script type="text/javascript" src="https://counter.websiteout.com/js/2/0/20/0"></script>
+        <div class="navigation">Navigation is loading...</div>
+    </div>
+</body>
+</html>

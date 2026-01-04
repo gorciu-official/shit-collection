@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/coding.js" type="module"></script>
+    <link rel="stylesheet" href="/css/coding.css">
+    <title>gorciu's coding website</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <aside>
+                <p style="color:yellow;text-align:center;"><a href="/coding/index.html">Go back</a></p>
+                <hr>
+                <p>I provide these resources for free to you. Consider <a href="https://neocities.org/site/gorciu">following me</a> or sharing these tutorials if you found them useful ;<span style="display:none;">(</span>) [you won't find them useful]</p>
+            </aside>
+            <main>
+                <h1>Using Nekoweb to add music for your website</h1>
+                <p>Visit <a href="https://gorciu.nekoweb.org/music" target="_blank">this</a> page and check its source code. Go ahead! To view the source code you can use Ctrl+U. You'll see something similar to the <a href="https://melonking.net/melon" target="_blank">MelonKing</a>'s autoplay is diabled popup.</p>
+                <p>You can use small HTML players inside an iFrame on a hosts that support MP3s to bypass Neocities restriction for free sites about external assets and restricted file types. This works, because Nekoweb is an alternative for Neocities that supports just that and does not set restrictive Access-Control and Content-Security-Policy headers.</p>
+                <p>So in order to make it work, just copy my code from <i>view-source:https://gorciu.nekoweb.org/music</i> and iFrame it in your website. It's best to use fixed position. You'll quickly see that it does not hide anything, even if you click <i>Play it anyways</i>. That's because you have to set an event listener <i>message</i> and check if the first argument dot action is equal to <i>music-playing</i>. If it is, use inline CSS to hide the element.</p>
+                <h2>That's a shady tutorial, could you explain how it works?</h2>
+                <p>In the playlist variable you can put your own songs you wanna to play. And if that's not enough for you, I can explain everything in the code.We have two functions - getRandomIndex, which gets the random song and playTrack which is executed every time a track stops. If the music is playing, it broadcats a message to your website, so you can hide the iFrame.</p>
+                <p style="font-size:25px;color:red;">Never delete the element. It will stop the playback.</p>
+                <p>Instead, set <i>opacity</i> to zero, <i>visibility</i> to hidden or <i>display</i> to none (best solution).</p>
+            </main>
+            <aside>
+                <p>Welcome in my coding tutorials zone! Enjoy your stay!</p>
+                <hr>
+                <p style="display:flex;justify-content:center;background-color:aliceblue;border-radius:10px;"><img src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1757239253/style=4/counter.png"></p>
+                <hr>
+                <p>I have no idea what to put here...</p>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

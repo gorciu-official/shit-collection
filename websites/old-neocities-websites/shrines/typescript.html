@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        body {
+            background-color: blue;
+            padding: 25px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: monospace;
+        }
+
+        p {
+            font-size: 22px;
+        }
+
+        pre {
+            font-family: monospace;
+            padding: 5px;
+            background-color: lightcoral;
+            margin: 5px 0; 
+        }
+
+        hr {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <small>Why are you making a shrine about a programming language? Shut up baby, because I can.</small>
+        <br>
+        <h1 style="max-width:50%;"><a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> is JavaScript with syntax for types.</h1>
+        <p>Or... that's what they want you to think. It is <b>not exactly 100% JavaScript compatibile</b>, because it throws at least 10 type errors while migrating your middle-class project to TypeScript.</p>
+        <p>The most important feature of TypeScript is... actually not types, but autocompletion in your IDE. If you install for example <i>@types/node</i>, you'll get autocompletion for variables like process. This is JavaScript:</p>
+<pre><code>import { x } from 'random-thing';
+x.name = 'x';
+</code></pre>
+        <p>You need to write code with documentation, because your IDE interprets types like this:</p>
+<pre><code>import { x } from 'random-thing';
+(x as any).name = 'x';
+</code></pre>
+        <p>And any is well... any object / string / number / class / function / who cares.</p>
+        <p>If you know that <b>x</b> will have property <b>name</b>, to get intelephense, you need to write comments... Yeah, comments.</p>
+        <hr>
+        <p>JSDoc is garbage. Do you really want to write:</p>
+<pre><code>import { x } from 'random-thing';
+
+// @ts-check
+
+/** @param {{name: string}} x */
+function setname(x) {
+    x.name = 'x';
+}
+
+setname(x);
+</code></pre>
+        <p>You just need to switch to TypeScript, install required type packages and your life will get much easier. Even if there are no types, you can try:</p>
+<pre><code>import { x } from 'random-thing';
+
+interface fixingtypes1 {
+    name: string;
+}
+
+(x as fixingtypes1).name = 'x';
+</code></pre>
+        <p>This may also seem like a lot cof code, but you can reuse it, for example:</p>
+<pre><code>import { x } from 'random-thing';
+
+interface fixingtypes1 {
+    name: string;
+    age: number;
+}
+
+(x as fixingtypes1).name = 'x';
+(x as fixingtypes1).age = 12;
+(x as fixingtypes1).name = 'xb';
+(x as fixingtypes1).age = 52;
+</code></pre>
+        <p style="font-size:25px;"><b>But that's rarely the case.</b></p>
+        <p>In most cases you can write like that:</p>
+<pre><code>import { x } from 'random-thing';
+
+x.name = 'x';
+</code></pre>
+        <p>The same code as in JavaScript, but you get <b>autocompletion</b>! Awesome.</p>
+        <br>
+        <p><a href="/hidden/exit.html">Back to website</a></p>
+    </div>
+</body>
+</html>

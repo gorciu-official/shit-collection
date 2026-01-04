@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gorciu's idea generator</title>
+    <link rel="stylesheet" href="/css/blogentry.css">
+    <script src="/js/common.js"></script>
+    <script>
+        var ideas = [
+            'Tidy up your room!',
+            'Hack NASA (just kidding... or not?)',
+            'Write a song about potatoes.',
+            'Make a website that screams when clicked.',
+            'Count how many bricks are in your neighborhood.',
+            'Replace every image on your computer with Nicolas Cage.',
+            'Invent a new programming language with only one keyword.',
+            'Draw a map of your room from memory.',
+            'Try to write with your non-dominant hand for a day.',
+            'Talk to your plants and ask them for life advice.',
+            'Create a language only your cat understands.',
+            'Write a poem using only error messages.',
+            'Translate a random Wikipedia page into emojis.',
+            'Create an AI that writes love letters to other AIs.',
+            'Build a calculator that only gives wrong answers.',
+            'Design a flag for your personal country.',
+            'Start a cult dedicated to toast.',
+            'Make a terminal-based game where nothing happens.',
+            'Code a website that becomes increasingly glitchy the longer you stay on it.',
+            'Record a podcast where you interview your past self.',
+            'Invent a conspiracy theory and make a fanpage.',
+            'Make a text adventure where the player never leaves their bed.',
+            'Create an app that tells you to go outside (but never lets you close it).',
+            'Compile a list of every noise your house makes at night.',
+            'Attempt to teach your dog HTML.',
+            'Build a task manager that rewards you with cat gifs.',
+            'Program a digital pet that slowly becomes sentient.',
+            'Redesign your site in Comic Sans only.',
+            'Create a button that does nothing — and track how often people click it.',
+            'Generate fake websites from alternate universes.',
+            'Host a fake livestream of you doing nothing.',
+            'Write a fanfic about your keyboard and mouse falling in love.',
+            'Make an RPG game where you play as a depressed toaster.',
+            'Turn error 404 pages into full mini-games.',
+            'Display a random haiku every time someone opens devtools.',
+            'Invent a new time zone just for your projects.',
+            'Build a "Mood Generator" that just guesses wrong.',
+            'List 1000 uses for an old USB stick.',
+            'Make a fake AI assistant that gets progressively weirder.',
+            'Add random pirate slang to your interface.',
+            'Design a CAPTCHA that asks philosophical questions.',
+            'Create a todo list where tasks delete *you* instead.',
+            'Set up a CSS-only horror maze.',
+            'Draw fake blueprints of your website\'s "architecture".',
+            'Make a weather app that always says “acid rain incoming”.',
+            'Replace every click sound with a goat scream.',
+            'Build a simulator of your site\'s traffic… but from 1997.',
+            'Write a terminal-based soap opera.',
+            'Code a quiz that insults the player when they get it right.',
+            'Let your site change fonts every second — randomly.',
+            'Make a Minecraft server for your Discord community or for your friends',
+            'Clean up your room... really.'
+        ];
+        function init_idea_gen() {
+            var idea_gen = document.querySelector('#idea');
+            if (idea_gen) {
+                idea_gen.addEventListener('click', function () {
+                    idea_gen.textContent = ideas[Math.floor(Math.random() * ideas.length)];
+                });
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            init_idea_gen();
+        });
+    </script>
+    <style>
+        #idea {
+            user-select: none;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: blue;
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Idea generator</h1>
+    <p>Well, have fun! And do whatever I say you to do. Maybe except for hacking NASA...</p>
+    <div id="idea">Click here to get a random idea!</div>
+    <h2>FAQ</h2>
+    <p><b>Q: I don't have a dog! What should i do?</b> A: Go and buy a dog. Buy a cat too, they are cool!</p>
+    <p><b>Q: Guy, I can't code!</b> A: So... learn coding!</p>
+    <p><b>Q: What is RPG?</b> A: RolePlay Gaming</p>
+    <p><b>Q: How can I speak to my dog?</b> A: Ask AI... joke! Figure it out yourself.</p>
+    <p><b>Q: I can't write with my non-dominant hand!</b> A: But I can, so should you.</p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+@import url(global.css);
+
+* {
+    color: white;
+}
+
+body {
+    background-color: #5691df;
+    padding: 30px;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 70%;
+    min-width: 70%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+}
+
+main, aside {
+    padding: 25px 10px;
+}
+
+aside {
+    max-width: 200px;
+    min-width: 200px;
+}
+
+main {
+    border-left: 2px solid #17057a;
+    border-right: 2px solid #17057a;
+    min-width: calc(100% - 404px);
+}
+
+main *:not(h1, h2), main {
+    font-family: monospace;
+    font-size: 15px;
+}
+
+hr {
+    display: block;
+    border: 2px solid white;
+    height: 0;
+    margin: 15px 0;
+    background: transparent;
+    width: 100%;
+}

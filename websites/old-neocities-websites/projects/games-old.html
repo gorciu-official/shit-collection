@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gorciu's games</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/common.js"></script>
+    <style>
+        * {
+            color: white;
+            font-family: serif;
+        }
+
+        body {
+            background-image: url(/img/bg.png);
+            min-width: 100dvw;
+            min-height: 100dvh;
+        }
+
+        .game {
+            background-color: black;
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 700px;
+            min-width: 700px;
+        }
+
+        .games {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .games div:has(.game):last-child {
+            margin-top: 50px;
+        }
+
+        p {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="games">
+        <div>
+            <div class="game">
+                <h2><a href="https://github.com/gorciu-official/JUAMP" target="_blank">JUAMP</a></h2>
+                <p>JUAMP is a simple choice-based game, where you make actions by choosing a number from 0 to 10.</p>
+                <p><a href="https://github.com/gorciu-official/JUAMP/releases/latest" target="_blank">Download here</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="game">
+                <h2><a href="https://github.com/gorciu-official/VirtualMiner">Virtual Miner</a></h2>
+                <p>Virtual Miner is a game similar to Cookie Clicker, where you mine ores and buy upgrades.</p>
+                <p><a href="https://virtualminer.netlify.app/" target="_blank">Play now</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="games">
+        <div>
+            <div class="game">
+                <h2><a href="https://suntrack-mirror.netlify.app/" target="_blank">Suntrack</a></h2>
+                <p>A really buggy game where you steer a car in a wrong direction and avoid other people's cars. It's not multiplayer unlike the name suggests.</p>
+                <p><a href="https://suntrack-mirror.netlify.app/" target="_blank">Play now</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="game">
+                <h2><a href="https://propolia.netlify.app/" target="_blank">Propolia</a></h2>
+                <p>Propolia is a Monopoly-like game. Don't play - it was an experiment how Discord community is going to react to addictive mechanics.</p>
+                <p><a href="https://propolia.netlify.app/" target="_blank">Play now</a> (bad idea)</p>
+            </div>
+        </div>
+    </div>
+    <div class="games">
+        <div>
+            <div class="game">
+                <h2><a href="https://socially-game.netlify.app/" target="_blank">Socially</a></h2>
+                <p>Socially is a living-in-China simulator with choices that affect your credit score, saturation and more.</p>
+                <p><a href="https://socially-game.netlify.app/" target="_blank">Play now</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="game">
+                <h2><a href="https://theskim.netlify.app/" target="_blank">Skim</a></h2>
+                <p>Skim is a Undertale-like boss, which is meant to impossible to kill. I know it's possible, but it requires effort.</p>
+                <p><a href="https://theskim.netlify.app/" target="_blank">Play now</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

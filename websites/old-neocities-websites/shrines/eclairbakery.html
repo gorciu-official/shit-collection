@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eclairbakery shrine</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        * {
+            color: white;
+        }
+
+        p {
+            max-width: 80%;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <script>
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
+   
+        // @ts-check
+        /** @param {string} msg */
+        async function appendMessage(msg) {
+            /** @type {HTMLParagraphElement} */
+            const element = document.querySelector('p');
+            element.textContent = '$ ';
+            const msg2 = msg.replace('<a href', '---MAGIC-1').split(' ');
+            await sleep(200);
+            for (const message of msg2) {
+                element.innerHTML = element.innerHTML + ' ' + message.replace('---MAGIC-1', '<a target="_blank" href');
+                await sleep(200);
+                continue;
+            }
+            await sleep(1500);
+        }
+
+        async function main() {
+            await appendMessage('Eclairbakery is a Discord server, in which I really enjoy spending my time.');
+            await appendMessage('While I don\'t use much of a traditional social media');
+            await appendMessage('like for example boring Facebook, which is used by your dad, Instagram, used by your classmates');
+            await appendMessage('TikTok, which is a home for any brainrot out there');
+            await appendMessage('or even fucking Scratch, which turned into yet another social media site;');
+            await appendMessage('I like spending time on... Discord! I made my first account in 2022, and if I trust my own memory - in the same year');
+            await appendMessage('I started talking with... someone called piglin at the time.');
+            await appendMessage('After two ywars, the eclairbakery was born. With...');
+            await appendMessage('now legendary... EclairAI - a simple joke of an AI, which attracted many people to the server.');
+            await appendMessage('And I\'m sttill active there. Unfortuneally, the server is Polish, but you can find it <a href="https://discord.com/invite/ppPRB7TDeN">here</a>.');
+        }
+
+        main();
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO NOT CLICK</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        body {
+            padding: 10px;
+            background-color: white;
+        }
+
+        a {
+            color: black;
+        }
+
+        .wrapper {
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <p><b>do not click anything here, just peacefully go back</b></p>
+        <img src="http://www.hat.net/abs/gif/dc_line.gif" alt="_____________________________________" style="margin: 20px 0;">
+        <div class="wrapper">
+            <section style="border:1px solid black; padding: 10px;">
+                <noscript>You HAVE to enable JavaScript in order for it to work.</noscript>
+                <p class="contents" style="margin-bottom:0;"></p>
+                <p class="waitsign" style="color:red;font-size:22px;display:none;margin-bottom:0;text-align: center;">READ THE TEXT AND THEN CLICK THE BUTTON</p>
+            </section>
+            <br>
+            <p><a href="javascript:continuee();">do not click this link</a> | <a href="javascript:history.back();">go back</a></p>
+        </div>
+    </div>
+    <script>
+        let globalCounter = -1;
+        let array = [
+            'Everyone makes mistakes. You just clicked on a place you shouldn\'t click on. Please go back peacefully.',
+            'This website does not feature rickrolls, pranks, nudity or anything that you should really care about. Please just click that back button, it\'s not that hard.',
+            'I know it\'s interesting, but think - you really won\'t find anything here, it is endless, so why even waste your time?',
+            "Don't even make me start! Just exit this page... NOW! And if you won't...",
+            "Nothing will really happen to you, but why even waste your time?",
+            "I have time... You don't. You can spend some time here and find really nothing useful.",
+            "Am I not clear? EXIT THIS PAGE BY PRESSING BACK BUTTON.",
+            "You can press back button in your browser by finding a left arrow button and clicking it or by using Alt+LeftArrow. USE THIS NOW!",
+            "AT THIS VERY MOMENT PLEASE GO BACK TO SOMETHING YOU HAVE NOT VISITED ON MY WEBSITE, BUT PLEASE DO NOT CLICK AGAIN ON THAT DANGEROUS BUTTON.",
+            "Imagine that if you press that `do not click this link` button a random person in the universe dies. Do you really want that?",
+            "Are you really going to click again? This is a waste of time. Just hit the back button. I promise you, there's nothing worth seeing here.",
+            "I warned you! Don't keep testing it! Just click back and save yourself the trouble.",
+            "What's the point of clicking? It won't do anything for you. Just go back and find something useful!",
+            "Don't get me started! Seriously, clicking again won't change anything. Just leave this page.",
+            "Still here? You're curious, huh? Well, there's nothing interesting coming up. Seriously, just go back.",
+            "You've been warned. Go back, and save yourself the time. Don't be stubborn.",
+            "Are you ignoring me on purpose? You can stop now. Just hit the back button.",
+            "You're still here. Why? You won't find anything better. Go back.",
+            "No matter how many times you click, you will never find anything worth your time here. Back button. Now.",
+            "You should've listened to me earlier. It's not too late. Back button. Go ahead.",
+            "Come on, what's the point of continuing to click? It's an endless loop. Just go back!",
+            "Are you seriously going to continue clicking this? Don't be that person. Just go back.",
+            "This is your last warning. Hit the back button. I'm not going to say it again.",
+            "You must really like wasting time, huh? Go back already.",
+            "It's a lost cause at this point. Click back and find something meaningful to do.",
+            "Let's start from the very beggining... I'll try once again!"
+        ];
+        let canContinue = true;
+        let debug_ignoreCanContinueWarning = false;
+
+        function continuee() {
+            if (!canContinue && !debug_ignoreCanContinueWarning) {
+                document.querySelector('.waitsign').style.display = 'block';
+                return;
+            }
+            globalCounter++;
+            document.querySelector('.waitsign').style.display = 'none';
+            document.querySelectorAll('p.contents').forEach((el) => {
+                const texter = array[globalCounter];
+                if (!texter) window.location.reload();
+                el.innerHTML = texter;
+            });
+            canContinue = false;
+            setTimeout(() => {
+                canContinue = true;
+            }, 5000);
+        }
+
+        continuee();
+    </script>
+</body>
+</html>

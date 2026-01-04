@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gorciu's projects</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/common.js"></script>
+    <style>
+        body {
+            background-color: blue;
+            overflow-y: hidden;
+        }
+
+        header {
+            padding: 15px;
+            background-image: url(/img/cd.gif);
+            height: 90px;
+            border-bottom: 2px solid black;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header a {
+            background-color: red;
+            color: white !important;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        img#header {
+            user-select: none;
+            background-color: black;
+            height: 60px;
+        }
+
+        iframe {
+            width: 100dvw;
+            height: calc(100dvh - 90px);
+        }
+
+        .old {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: black;
+            color: black;
+            transition: 0.25s linear;
+        }
+
+        .old:hover {
+            transition: 0.25s linear;
+            background-color: lightskyblue;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/img/projects.png" alt="projects" id="header" draggable="false">
+        <a href="/projects/games.html" target="projectframe">games</a>
+        <a href="/projects/interpuce.html" target="projectframe">interpuce</a>
+        <a href="/projects/fun.html" target="projectframe">fun stuff</a>
+    </header>
+    <iframe src="/projects/games.html" style="border: none;" name="projectframe"></iframe>
+    <a class="old" href="/hidden/projects-old.html">time travel</a>
+</body>
+</html>

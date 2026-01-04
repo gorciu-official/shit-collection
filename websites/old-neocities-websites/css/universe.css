@@ -1,0 +1,27 @@
+@import url(global.css);
+
+body {
+    background-color: black;
+}
+
+body:not(.fuck-h1-styling) h1 {
+    color: lightskyblue;
+    text-shadow: 2px 2px 2px white;
+    border: lime solid 2px;
+    padding: 10px;
+    border-radius: 15px;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+}
+
+a {
+    color: white;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+a p {
+    text-align: center;
+}

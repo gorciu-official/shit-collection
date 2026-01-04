@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/coding.js" type="module"></script>
+    <link rel="stylesheet" href="/css/coding.css">
+    <title>gorciu's coding website</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <aside>
+                <p style="color:yellow;text-align:center;"><a href="/coding/index.html">Go back</a></p>
+                <hr>
+                <p>I provide these resources for free to you. Consider <a href="https://neocities.org/site/gorciu">following me</a> or sharing these tutorials if you found them useful ;<span style="display:none;">(</span>) [you won't find them useful]</p>
+            </aside>
+            <main>
+                <h1>iFrame Websites</h1>
+                <p>If you're not viewing in mobile mode... you are using an iframe website. This means you usually have the navbar on the left... and a site frame on the right. My site is not an exception!</p>
+                <p>iFrame sites are popular when you want to distinguish the layout of the website. For example, your blog has different styling than your shrines or about page. I decided to make my site iFrame-ish after I saw <a href="https://melonking.net">Melonking's website</a>.</p>
+                <hr>
+                <h2>How to make them!</h2>
+                <p>You can write your own iFrame script and it's the hardest way to do it. iFrame script attaches the link of your embedded website into the address bar. It's possible to write your iFrame website without any script, but bookmarking will be broken and you'll need to navigate to a specific site every time. I did it like this:</p>
+                <img src="/img/address-bar.png" alt="address bar" style="width:100%;">
+                <p>You can code the script from my source code (Ctrl+U) or use another good alternative (it's great, really), it should be somewhere <a href="https://forum.melonland.net/index.php?topic=115.0" target="_blank">here</a> (forum is closed on Mondays, <a href="https://melonking.net/scripts/frame-link.js" target="_blank">here</a> you have the script link)</p>
+                <hr>
+                <h2>Creating the navigation bar</h2>
+                <p>You can create the navigation bar by another iFrame or by just an element on the page. It doesn't matter. I recommend you to add some GIFs before the subsite name.</p>
+                <p>The most important thing is to link your links inside your navbar to your iFrame. You don't need to do this to links inside your iFrame, but inside your navbar you have to do that. This is because of different browsing contexts.</p>
+                <hr>
+                <h2>My honest recommendations</h2>
+                <ol>
+                    <li>Create a common.css / global.css file and keep your global styles here.</li>
+                    <li>Do the same with JavaScript, even when you don't need it. After a while you'll probably want something for all sites and you can change this easily in global CSS / global JavaScript.</li>
+                    <li>Try to keep your styling in CSS files only. You can achieve that by importing other files via <i style="color:yellow;">@import url(file.css)</i>. But please, do not make messy / useless classes like <b style="color:red;">red-bold</b>, you can use inline style for this. I hope you understood what I meant.</li>
+                </ol>
+                <hr>
+                <h2>Where distinguishing the layout does not make sense?</h2>
+                <p>Number one: your blog and your microblog. You don't want to style one article 32898734823632765 hours. In most cases it's just plain text, so why do you even want to change <i>font-size</i>, <i>line-height</i>, <i>font-family</i>, <i>color</i>, etc. for just a short article.</p>
+                <p>Number two: similarly themed subsites. Do you think <a href="https://deltarune.com/code/" target="_blank">this website</a> and <a href="https://deltarune.com/code/comments" target="_blank">this website</a> should have completelly different layouts? I don't.</p>
+                <hr>
+                <p>And that's it for now. <a href="/coding/index.html">Go back</a>.</p>
+            </main>
+            <aside>
+                <p>Welcome in my coding tutorials zone! Enjoy your stay!</p>
+                <hr>
+                <p style="display:flex;justify-content:center;background-color:aliceblue;border-radius:10px;"><img src="http://www.snazzyspace.com/generators/viewer-counter/counter.php/fid=1757239253/style=4/counter.png"></p>
+                <hr>
+                <p>I have no idea what to put here...</p>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

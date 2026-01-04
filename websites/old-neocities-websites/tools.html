@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tools used by @gorciu</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/common.js"></script>
+    <style>
+        * {
+            color: white;
+        }
+
+        body {
+            background-color: black;
+            background-image: url(https://textures.neocities.org/textures/humans-and-technology/comp016.gif);
+            padding: 10px;
+        }
+
+        .old {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+            color: white;
+            transition: 0.25s linear;
+        }
+
+        .old:hover {
+            transition: 0.25s linear;
+            background-color: blue;
+            color: white;
+        }
+
+        main {
+            padding: 10px;
+            background-color: #10252bc4;
+            backdrop-filter: blur(5px);
+        }
+
+        .neofetch li b {
+            color: aqua;
+        }
+
+        .spoiler {
+            background-color: white;
+        }
+
+        .spoiler:hover {
+            background-color: black;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 40px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="center">
+            <h1>Tools I use</h1>
+        </div>
+        <br>
+        <p>Let's take a look at <i>some things from</i> my Neofetch output:</p>
+        <ul class="neofetch">
+            <li><b>OS:</b> Arch Linux</li>
+            <li><b>Shell:</b> Bash</li>
+            <li><b>Terminal:</b> konsole/kitty/VSCode built-in</li>
+            <li><b>DE:</b> KDE Plasma (stylized to look like GNOME)</li>
+            <li><b>WM:</b> KWin</li>
+            <li><b>X11/Wayland:</b> Wayland</li>
+            <li><b>CPU:</b> <s style="color: gray;">Intel(R) Core(TM)2 Quad Q9300 (4) @ 2.50 GHz</s> AMD Ryzen 9 5950X (32) @ 5.09 GHz</li>
+            <li><b>GPU:</b> AMD Radeon HD 8490 / R5 235X OEM</li>
+            <li><b>Host:</b> <s style="color: gray;">ASUS P5Q-PRO</s> A520 AORUS ELITE (-CF)</li>
+            <li><b>Memory:</b> <s style="color: gray;">3.12 GiB / 5.8 GiB</s> 5.14 GiB / 31.25 GiB</li>
+        </ul>
+        <div class="spoiler-block">
+            <p>I've got a new computer recently and replaced everything, except for my drives (I installed new M.2. one, too), case and graphics card.</p>
+        </div>
+        <hr>
+        <p class="tcenter">because i'm a developer you're probably interested in something coding-related, right?</p>
+        <p class="tcenter" style="color:gray;font-size:14px;">no, you're not, but i'll show you anyways!</p>
+        <br>
+        <p>I use two code editors:</p>
+        <ul class="neofetch">
+            <li><b>Visual Studio Code</b> is my primary code editor. I use it when... you guessed it right - I want to code something.</li>
+            <li><b>Neovim</b> is my secondary code editor. I'd rather say it's my config editor, I kinda used it a lot when I used Hyprland as my WM.</li>
+        </ul>
+        <p><s style="color:gray;">I'd be very happy if I could replace all of my programming works with Neovim. It does not crash that often (I can't even write code for 15 minutes without any crash because that's too hard for VSCode), but it has its problems that prevent me from doing this. For example it does not make my code properly formatted. I need to do it myself. I don't want very much, the only my requirements are to place one new line character and then enough tabs, like VSC does by default.</s></p>
+        <p>Now I don't have to worry about stability of IDEs, because I replaced my motherboard including broken memory controller with a new build, which doesn't have these issues. I think about switching to JetBrains IDEs now, but I'm not sure whether I would do that!</p>
+        <br>
+        <marquee behavior="alternate" truespeed scrolldelay="30" style="margin-bottom:10px;color:red;">DO YOU EVEN KNOW ANYTHING ABOUT DEPENDENCIES!? I WANT YOUR DEPENDENCIES!!!</marquee>
+        <p>Okay... if I have choice and it's not hard to achieve, I don't like being dependent, but i also can't/i'm too lazy to:</p>
+        <ul>
+            <li>reinvent the wheel by making my own CPU with my own architecure and by making my own hard drive, my own RAM, my own GPU, my own ECAM a.k.a PCI ECAM a.k.a electronic centralised aircraft monitor a.k.a pci enhanced configuration access mechanism</li>
+            <li>make my own programming language</li>
+        </ul>
+        <p>I sometimes use these dependencies / libraries / programs to build my applications:</p>
+        <ul>
+            <li><b>jsdom</b> - I'm too lazy to rewrite I don't know how much files just to get some random property from document object model a.k.a DOM</li>
+            <li><b>grub</b> - I'm also too lazy to rewrite a bootloader and grub is okay enough</li>
+            <li><b>gcc and g++</b> - I said <i>every time i was trying to make a programming language [...] i failed</i>, that's the reason</li>
+            <li><b>node</b> - same as gcc and g++</li>
+            <li><b>typescript</b> - this npm library extending JavaScript is awesome. It's so awesome I could not recreate it (maybe because it's a programming language)</li>
+        </ul>
+        <hr>
+        <div class="center">
+            <a class="old" href="/hidden/tools-old.html">time travel</a>
+        </div>
+    </main>
+</body>
+</html>

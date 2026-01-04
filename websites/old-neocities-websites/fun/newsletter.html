@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>gorciu's newsletter</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/common.js"></script>
+    <style>
+        * {
+            color: white;
+        }
+
+        html {
+            background-color: #0264f7;
+        }
+
+        body {
+            background-color: #000000b4;
+            background-image: url(/img/earth.gif);
+            background-blend-mode: darken;
+            padding: 50px;
+        }
+
+        button {
+            padding: 5px;
+            background-color: blue;
+            border-radius: none;
+            border: none;
+        }
+
+        input {
+            color: black;
+            padding: 5px;
+            border: none;
+            outline: none;
+        }
+
+        @keyframes sleepbabcia {
+            0% {
+                transform: translateY(10px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(10px);
+            }
+        }
+
+        h1 {
+            animation: sleepbabcia 1s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <h1>Join my newsletter</h1>
+    <p>Input your email and I'll give you something valuable to your inbox.</p>
+    <p>I promise not to register you at some shady newsletters. Trust me.</p>
+    <hr>
+    <form method="POST" action="https://letters.melonland.net/join.php" target="_blank">
+        <input type="hidden" name="list" value="31">
+        <input type="text" name="nickname" required maxlength="32" placeholder="Diesel engine/Nickname">
+        <input type="email" name="email" required maxlength="120" placeholder="i-am-internet-user@email.lol">
+        <button type="submit" onclick="clearTextBoxes()">Subscribe!</button>
+    </form>
+    <hr>
+    <h2>FAQ</h2>
+    <p><b>Q: How is my email stored?</b> A: Ask <a href="https://melonking.net/newsletter" target="_blank">this guy</a>, actually. He claims that it is not shared with any external services/persons. He operates a letter service and well... I use it. You should too...</p>
+    <p><b>Q: How to unsubscribe?</b> A: Never do this. And if you have to, find welcome email there should be an unsubscribe link.</p>
+</body>
+</html>

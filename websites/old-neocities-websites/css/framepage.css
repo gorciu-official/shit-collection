@@ -1,0 +1,136 @@
+@import url(global.css);
+
+body, html {
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    background: url(/img/frame-bg.jpeg);
+}
+
+nav {
+    margin: 15px;
+    border: 5px solid #4b2311;
+    padding: 10px;
+    height: calc(100% - 30px);
+    width: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #080949;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    background: #000020;
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000020;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cd7c00;
+    border-radius: 10px;
+}
+
+nav img {
+    height: 64px;
+    display: block;
+}
+
+nav a {
+    color: #ece90b;
+    margin-bottom: 10px;
+}
+
+main {
+    flex-grow: 1;
+    padding: 15px;
+}
+
+main iframe {
+    width: 100%;
+    height: 100%;
+    border: 5px solid #4b2311;
+    background-color: #4b2311;
+}
+
+.additional-info {
+    background-color: brown;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.additional-info p {
+    font-size: 16px;
+    margin: 5px;
+    color: white;
+}
+
+.additional-info img {
+    max-height: 24px;
+}
+
+.additional-info a:has(img) {
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+        gap: 0;
+        overflow-y: hidden;
+    }
+
+    nav {
+        margin: 0;
+        padding: 10px 5px;
+        flex-direction: row;
+        overflow-y: hidden;
+        overflow-x: auto;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: auto;
+        min-height: 70px;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    nav img {
+        height: 48px;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin: 0 5px;
+    }
+
+    main {
+        padding: 0;
+        flex-grow: 1;
+    }
+
+    main iframe {
+        height: 100%;
+    }
+
+    .additional-info {
+        display: none;
+    }
+
+    nav, main, main iframe {
+        border: none;
+    }
+}

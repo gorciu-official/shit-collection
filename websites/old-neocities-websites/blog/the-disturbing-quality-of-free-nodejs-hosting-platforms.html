@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gorciu's blog</title>
+    <link rel="stylesheet" href="/css/blogentry.css">
+    <script src="/js/common.js"></script>
+</head>
+<body>
+    <h1>The disturbing quality of free NodeJS hosting platforms</h1>
+    <p>PHP, PHP, PHP, InfinityFree, 000webhost (dead) and many, many others. If you want to find an excellent PHP hosting, you will eventually find it. I personally use InfinityFree to host my <a href="https://5chat.42web.io" target="_blank">imageboard</a>. But the sad truth is that no one uses React anymore.</p>
+    <p>I have written on my blog about this before (read the full article <a href="/blog/php-or-react.html">here</a>). PHP is abandanoned and now Javascript is the king. It makes sense everyone wants a NodeJS hosting, right?</p>
+    <h2>Frameworks can compile to static sites...</h2>
+    <p>Vercel... Excellent NodeJS hosting, right? <b>NOPE</b>! It only runs a build process and it disallows anything like <i>npm start</i>. That means you need to host a website.</p>
+    <p>Yeah, that's the primary reason you want to use NodeJS hosting, right? <b>NOPE</b>! Yes, I agree that the primary reason to use hosting platforms is to build various websites. But they did it <i>wrong</i>. You see... you can't even host a backend for your website. And that's the reason to even use PHP in the first place. It's like calling something an innovation, where in reality it's objectivelly worse. But use it! Use it! It's innovative. (sarcasm)</p>
+    <p class="quote">
+        Static sites are fine!
+    </p>
+    <p>Yes, but compare a small project with a database to a personal website. It's like comparing a computer to a fridge. The first one and the second one is an electronic device. But they have a different role and they work different(ly). While Neocities, static web hosting is fine for a personal website, it's the worst thing you could choose when building a small forum.</p>
+    <h2>Other things you can use NodeJS for</h2>
+    <p>NodeJS is commonly used for making websites. But it's not all it's capable of. It can for example:</p>
+    <ul>
+        <li>do automated actions for you</li>
+        <li>host a Discord bot</li>
+        <li>use AI for something</li>
+        <li>and many more</li>
+    </ul>
+    <p>NodeJS is not just React, Vue, Next.JS, [put your framework's name here]. If you go to NodeJS's website, you don't see "A Modern and Safe PHP Successor With Package Management Done Right". You instead see "Run JavaScript, everywhere". Even NodeJS claims that its only goal is not to serve websites.</p>
+    <h2>0.5 gigs of RAM is a small amount</h2>
+    <p>So you know I love TypeScript.</p>
+    <div class="center" style="margin:30px 0;">
+        <iframe style="width:100%;height:500px;" class="cenrow" frameborder="0" src="/shrines/typescript.html"></iframe>
+    </div>
+    <p>You have to compile it. Do you think <b>0.5 gigs of RAM</b> is enough to <b>compile TypeScript</b> in <b>two hours</b>? <b>NOPE</b>!</p>
+<pre><code>Pterodactyl Daemon: out of memory: true
+Pterodactyl Daemon: Not attempting to restart the server. Last crash occured less than 60 seconds ago.
+</code></pre>
+    <p>Okay, just leave it without a comment.</p>
+    <h2>Package management done <s>right</s> wrong!</h2>
+    <p>Okay, most of the packages don't even install properly on hostings like <a href="https://pella.app">pella.bot</a>, even though I mannually selected them to be installed. And there are no logs why the installation failed. They just aren't there.</p>
+    <p>In most cases I was able to get my dependencies to work only because of <i>esbuild</i>. I needed to put every dependency in the same file as my application. AND I needed to exclude & install some packages that don't work with <i>esbuild</i>. Why is it made like that? The packages are a pain and you need to figure out what works for you. Believe me, if you had problems with packages on your computer, you'll also have them on teh hosting side.</p>
+    <hr>
+    <a href="/blog.html">Back to blog</a>
+</body>
+</html>

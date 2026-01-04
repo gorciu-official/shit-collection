@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Terminal Tips</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/common.js"></script>
+    <style>
+        * {
+            color: lime;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: black;
+            background-image: url(/img/matrix.gif);
+            padding: 10px;
+        }
+
+        main {
+            padding: 50px;
+            background-color: black;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        .command {
+            padding-left: 5px;
+            border-left: 5px solid blue;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1><img src="/img/terminal.gif" alt=""> Linux Terminal Tips!@!1! <img src="/img/terminal.gif" alt=""></h1>
+        <p style="text-align: center;">i'm... i'mmmm scaaaareeed of lii.. lii. li. nux because i don't know how to use the terminal!</p>
+        <p>Okay... Most people, like your dad or random office worker, don't even think of switching to Linux, because everyone tells them they're going to use terminal a lot and they know nothing about it. That's not always true, but people who use the terminal are naturally going to say that you'll use it.</p>
+        <p>But if you want to use it and learn it, this tutorial is for you.</p>
+        <hr>
+        <p>a few disclaimers 4 you:</p>
+        <ul style="list-style-image: url(/img/rainbowbullet.gif);padding:30px;">
+            <li>in most modern linux distros and in most cases you won't need a terminal. it's possible to use linux without never ever touching the terminal.</li>
+            <li>anyways, some actions can be done faster than you would normally do them in a desktop enviorment.</li>
+            <li><b>DON'T DAILYDRIVE LINUX WITHOUT DESKTOP ENVIORMENT UNLESS YOU REALLY KNOW WHAT ARE YOU DOING</b></li>
+            <li>this tutorial was inspired by <a href="https://mileshouse.neocities.org/linux_tips">this guy</a>.</li>
+        </ul>
+        <p style="text-align: center;color:yellow;">so... let's get started</p>
+        <div class="center" style="margin:15px 0;"><img src="/img/divider.gif" alt=""></div>
+        <p>First you need to understand some key concepts.</p>
+        <div class="center">
+            <table border width="800px" style="margin-bottom:10px;"><tbody><tr>
+                <td><b>Terminal</b> is that window which allows you to interact w/ the shell and see the output of commands.</td>
+                <td><b>Shell</b> is the thing that allows you to write commands and handles the execution of them.</td>
+            </tr></tbody></table>
+        </div>
+        <p>Then launch the terminal. You shall have it preinstalled, look for something called:</p>
+        <ul>
+            <li>konsole</li>
+            <li>terminal</li>
+            <li>kitty</li>
+        </ul>
+        <p>Usually the first result you get will be the terminal. If not, then go <a href="https://en.wikipedia.org/wiki/List_of_terminal_emulators" target="_blank">here</a> and try to find it. Launch it like you normally launch your GUI (graphical) programs.</p>
+        <div class="center" style="margin:15px 0;"><img src="/img/divider.gif" alt=""></div>
+        <h2>Process Management</h2>
+        <p>imagine this: something crashed, mostly on the terminal, Ctrl+C/Alt+F4 doesn't work, and it's not a graphical application, which means you won't get this nice popup <span style="color:orange;">"The application is not responding"</span>. or you just want to quit something but it only moved to the background.</p>
+        <p>nope, you don't need to go to the system monitor.</p>
+        <p class="command">ps aux | grep "YOUR_PROCESS_NAME_HERE"</p>
+        <p>this will show you the list of all running processes with name/argument <i>"YOUR_PROCESS_NAME_HERE"</i>. Let me quickly explain it to you:</p>
+        <ul style="list-style-image: url(/img/rainbowbullet.gif);padding:30px;">
+            <li>'<b>ps aux</b>' shows all running processes with their arguments</li>
+            <li>'<b>|</b>' redirects output from above command to the next command</li>
+            <li>'<b>grep "YOUR_PROCESS_NAME_HERE"</b>' searches the output of <i>ps aux</i> for any mentions about <i>"YOUR_PROCESS_NAME_HERE"</i></li>
+        </ul>
+        <p>You'll get an output like this:</p>
+        <p class="command">your_username 4357 200 0.1 12388 pts/4 R+ 12:01 0:00 <i>"YOUR_PROCESS_NAME_HERE"</i></p>
+        <p>After your username get that first number. It's the process ID. You need to pass it to another command like this.</p>
+        <p class="command">kill -9 4357</p>
+        <p>That will instantly kill the process. Of course you can pass at the end multiple process IDs. Remember to split them by space.</p>
+        <marquee behavior="alternate" style="color: red;" scrolldelay="40" truespeed>I'm not a fan of <i>pkill</i> because it doesn't work for me very well and it isn't that accurate as the above command.</marquee>
+        <div class="center" style="margin:15px 0;"><img src="/img/divider.gif" alt=""></div>
+        <h2>File Management</h2>
+        <p style="color:yellow;">Pssst... I recommend you running <b style="color: white;">alias "md=mkdir"</b>, it often makes your life easier.</p>
+        <p style="color:yellow;">And also remember: if a file has spaces in name, wrap it between quotes.</p>
+        <p>Here are some commands you'll need for the file management:</p>
+        <ul style="list-style-image: url(/img/rainbowbullet.gif);padding:30px;">
+            <li><b>mkdir</b> - creates a new directory. It's kinda long to type, so please use that alias command I showed you before and use <i>md</i>. After space specify the folder name you need to make.</li>
+            <li><b>touch</b> - creates an empty file. If you use Vim for files, this is optional (Vim will be later).</li>
+            <li><b>rm</b> - deletes a file or directory. Use -f to force it or -r to do it recursivelly (including subfolders). If you want to combine these two arguments, don't use -r -f, but -rf<br><span style="font-size:30px;color:red;">I DON'T CARE WHAT THEY SAY U, DO NOT EXECUTE <span style="font-size:30px;color:white;font-weight:800;">RM -RF --NO-PRESERVE-ROOT /</span> OR <span style="font-size:30px;color:white;font-weight:800;">RM -RF /*</span>, ESPECIALLY IF IT STARTS WITH SUDO, UNLESS YOU WANT TO HAVE FUCKED UP SYSTEM</span></span></li>
+        </ul>
+        <p>By the way, you can use <i>./</i> to use current directory, <i>../</i> to use the parent directory or <i>/</i> at the beggining to use the root directory.</p>
+        <div class="center" style="margin:15px 0;"><img src="/img/divider.gif" alt=""></div>
+        <h2>Escalating your permissions</h2>
+        <p>You can use <i>sudo</i> to escalate your permissions to the root account, something like <i>admin rights</i> on Windows. Remember that it can modify nearly every single file in your system, so be careful. You just prefix your command with <i>sudo</i> to get started. It'll ask for your password.</p>
+        <div class="center" style="margin:15px 0;"><img src="/img/divider.gif" alt=""></div>
+        <h2>Package management</h2>
+        <p>Click your distro for a tutorial (it'll only add the contents on the page, not redirect you somewhere): <a href="#packages-debian">Debian/Ubuntu/Mint/Debian-based</a>, Fedora-based coming soon, <a href="#packages-arch">Arch/CachyOS/Arch-based</a></p>
+        <style>
+            #packages-debian:not(:target) {
+                display: none;
+            }
+
+            #packages-arch:not(:target) {
+                display: none;
+            }
+
+            body:not(:has(#packages-arch:not(:target)):has(#packages-debian:not(:target))) #packages-warn {
+                display: none;
+            }
+        </style>
+        <div id="packages-debian">
+            <p>Before installing anything, do <i>sudo apt update</i>. That won't update the packages on your system, only the dependency list to safely install a package. Then do:</p>
+            <p class="command">sudo apt install <b>YOUR_PACKAGE_HERE</b></p>
+            <p>If you want to upgrade all packages in your system do:</p>
+            <p class="command">sudo apt update && sudo apt upgrade</p>
+            <p>If you want to delete a package:</p>
+            <p class="command">sudo apt remove YOUR_PACKAGE_HERE</p>
+            <p>It deletes the package, but not configuration files. If you want to do that too, try:</p>
+            <p class="command">sudo apt purge YOUR_PACKAGE_HERE</p>
+            <p>It deletes the program and the config files.</p>
+        </div>
+        <div id="packages-arch">
+            <p>To install a package:</p>
+            <p class="command">sudo pacman -S <b>YOUR_PACKAGE_HERE</b></p>
+            <p>If you want to upgrade all packages in your system do:</p>
+            <p class="command">sudo pacman -Syu</p>
+            <p>If you want to delete a package:</p>
+            <p class="command">sudo pacman -R <b>YOUR_PACKAGE_HERE</b></p>
+            <p>If the installation or the update generates errors, try:</p>
+            <p class="command">sudo pacman -Syy[u if update] [package name if installation]</p>
+        </div>
+        <p id="packages-warn" style="color:red;">Choose that distro to continue.</p>
+        <hr>
+        <p>That's everything for now.</p>
+    </main>
+</body>
+</html>
