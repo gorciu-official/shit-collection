@@ -1,0 +1,13 @@
+@keyframes animation {
+  0% {
+    /*Start of animation*/
+    transform: translateY(0%);
+  }
+  100% {
+    /*End of animation*/
+    transform: translateY(50%);
+  }
+}
+.animationelement {
+  animation: animation 5s infinite linear;
+}

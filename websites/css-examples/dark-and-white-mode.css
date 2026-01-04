@@ -1,0 +1,8 @@
+:root {
+  --bg: white;
+  --color: black;
+}
+body.dark {
+  --bg: darkgray;
+  --color: white;
+}
