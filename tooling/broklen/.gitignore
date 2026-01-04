@@ -1,0 +1,5 @@
+*.js
+*.bak
+.vscode
+node_modules
+dist

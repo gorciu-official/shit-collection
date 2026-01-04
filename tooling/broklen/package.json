@@ -1,0 +1,23 @@
+{
+    "name": "brooklen",
+    "description": "Brooklen is an open-source alternative to World Wide Web created by Gorciu, which takes care about privacy",
+    "version": "1.0.0",
+    "author": {
+        "name": "Gorciu",
+        "url": "https://github.com/gorciu-official"
+    },
+    "homepage": "https://github.com/gorciu-official/Brooklen/",
+    "private": "true",
+    "main": "dist/main.js",
+    "dependencies": {
+        "electron": "^33.2.0",
+        "typescript": "^5.6.3"
+    },
+    "scripts": {
+        "ts-transpile-src": "tsc src/start/main.ts --module CommonJS --skipLibCheck --outDir ./dist",
+        "ts-transpile-web": "tsc src/brooklen/script.ts --module CommonJS --skipLibCheck",
+        "ts-transpile": "npm run ts-transpile-web && npm run ts-transpile-src",
+        "js-start": "electron .",
+        "start": "npm run ts-transpile && npm run js-start"
+    }
+}
