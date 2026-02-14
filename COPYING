@@ -1,0 +1,20 @@
+Generally, there are only four rules you need to consider when
+wanting to fork, modify, edit or redistribute the software or other
+licensed work put into this GitHub shitty repository.
+
+- the `scams` directory is pretty much proprietary, because it may
+  feature work that has been put publicly and is unlicensed OR 
+  has been decompiled by someone I know and put here. if that's the case
+  you may request deletion, preferably on eclairbakery's discord server
+  which should be found somewhere in the `eclairbakery` GitHub organization
+  (i'm too lazy to create this invite now and i don't want to know that
+  it does not work after like 3 months), but keep in mind, that the file will
+  be still available through commit history.
+
+- if a project which is stored here has a `COPYING`, `LICENSE`, `LICENSE.md`,
+  `docs/LICENSE.md` or anything similar, please refer to this file for license.
+
+- you should NOT change this document although you are free to redistribute it 
+  in other project and change it there 
+
+- if case not clisted here, refer to the GPL-3.0-only license 
