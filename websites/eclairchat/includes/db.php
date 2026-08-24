@@ -86,8 +86,8 @@ function addColumnIfNotExists(PDO $db, string $table, string $column, string $de
     $db->exec($sql);
 }
 
+$db->exec($schema);
+
 addColumnIfNotExists($db, 'users', 'ip', 'TEXT');
 addColumnIfNotExists($db, 'users', 'discord_id', "TEXT NOT NULL DEFAULT '0'");
-
-$db->exec($schema);
 ?>
