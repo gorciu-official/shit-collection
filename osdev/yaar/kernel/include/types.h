@@ -25,9 +25,3 @@ typedef int			        int32_t;
 typedef unsigned		    uint32_t;
 typedef long long		    int64_t;
 typedef unsigned long long	uint64_t;
-
-/* cpp-like types */
-#ifndef __cplusplus
-typedef enum {false, true} bool; 
-// ^ you can NOT align this to 1 bit, it uses 32-bits, do not make shitty comments without understanding the topic
-#endif
